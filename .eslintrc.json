@@ -1,0 +1,144 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint", "unicorn"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "eqeqeq": "error",
+    "max-depth": ["error", 4],
+    "complexity": ["error", { "max": 30 }],
+    "max-nested-callbacks": ["error", 6],
+    "curly": "error",
+    "linebreak-style": "off",
+    "no-extra-semi": "error",
+    "no-var": "error",
+    "semi": ["error", "always"],
+    "no-multi-spaces": "error",
+    "semi-style": ["error", "last"],
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error",
+    "no-use-before-define": "off",
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignoreArrayIndexes": true
+      }
+    ],
+    "yoda": "error",
+    "lines-between-class-members": 2,
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/no-null": "off",
+    "no-shadow-restricted-names": "error",
+    "no-shadow": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "snakeCase",
+        "ignore": ["package-lock.json"]
+      }
+    ],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "allowList": {
+          "params": true,
+          "Params": true,
+          "param": true,
+          "Param": true,
+          "props": true,
+          "ref": true,
+          "Ref": true
+        }
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": ["const", "let", "var"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "function"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "block"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "class"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "iife"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "break"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "if"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "try"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "while"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "do"
+      },
+      {
+        "blankLine": "always",
+        "prev": ["case", "default"],
+        "next": "*"
+      }
+    ]
+  }
+}
