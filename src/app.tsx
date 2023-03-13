@@ -1,5 +1,6 @@
 import AppRouter from '@pages/routes';
 import { ProviderQuery } from '@providers/provider_query';
+import { ProviderStore } from '@providers/provider_store';
 import React from 'react';
 import { globalStyles } from './theme/global';
 
@@ -8,7 +9,9 @@ const App = (): React.ReactElement => {
 
   return (
     <ProviderQuery>
-      <AppRouter />
+      <ProviderStore>
+        <AppRouter />
+      </ProviderStore>
     </ProviderQuery>
   );
 };

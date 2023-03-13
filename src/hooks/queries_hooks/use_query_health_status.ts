@@ -14,5 +14,5 @@ const fetchHealthStatus = async (): Promise<
   return data;
 };
 
-export const useHealthStatus = (): UseQueryResult<HealthStatus, unknown> =>
+export const useQueryHealthStatus = (): UseQueryResult<HealthStatus, unknown> =>
   useQuery<HealthStatus, unknown>('health', fetchHealthStatus);

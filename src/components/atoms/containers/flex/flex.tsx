@@ -1,14 +1,17 @@
 import { styled } from '@theme/index';
 
 export const Flex = styled('div', {
-  boxSizing: 'border-box',
   display: 'flex',
 
   variants: {
     size: {
-      full: {
+      fullView: {
         height: '100vh',
         width: '100vw',
+      },
+      full: {
+        height: '100%',
+        width: '100%',
       },
     },
     direction: {
@@ -96,7 +99,64 @@ export const Flex = styled('div', {
         gap: '$9',
       },
     },
+    mx: {
+      xs: {
+        mx: '$xs',
+      },
+      sm: {
+        mx: '$sm',
+      },
+      md: {
+        mx: '$md',
+      },
+      lg: {
+        mx: '$lg',
+      },
+    },
+    my: {
+      xs: {
+        my: '$xs',
+      },
+      sm: {
+        my: '$sm',
+      },
+      md: {
+        my: '$md',
+      },
+      lg: {
+        my: '$lg',
+      },
+    },
+    px: {
+      xs: {
+        px: '$xs',
+      },
+      sm: {
+        px: '$sm',
+      },
+      md: {
+        px: '$md',
+      },
+      lg: {
+        px: '$lg',
+      },
+    },
+    py: {
+      xs: {
+        py: '$xs',
+      },
+      sm: {
+        py: '$sm',
+      },
+      md: {
+        py: '$md',
+      },
+      lg: {
+        py: '$lg',
+      },
+    },
   },
+
   defaultVariants: {
     direction: 'row',
     align: 'stretch',

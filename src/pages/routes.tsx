@@ -1,5 +1,5 @@
 import { Loading } from '@components/molecules/loading';
-import { useHealthStatus } from '@hooks/queries_hooks/use_health_status';
+import { useQueryHealthStatus } from '@hooks/queries_hooks/use_query_health_status';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -12,8 +12,10 @@ const RetryPage = React.lazy(() => import('@pages/retry_page'));
 
 const QuestionsPage = React.lazy(() => import('@pages/questions_page'));
 
+const QuestionPage = React.lazy(() => import('@pages/question_page'));
+
 export const AppRouter = () => {
-  const { data, isLoading } = useHealthStatus();
+  const { data, isLoading } = useQueryHealthStatus();
 
   return (
     <Router>
@@ -25,7 +27,7 @@ export const AppRouter = () => {
               {isLoading ? (
                 <Loading />
               ) : data?.status === 'OK' ? (
-                <Navigate to="/questions?filter=FILTER" />
+                <Navigate to="/questions?filter=" />
               ) : (
                 <RetryPage />
               )}
@@ -37,6 +39,15 @@ export const AppRouter = () => {
           element={
             <React.Suspense fallback={<Loading />}>
               <QuestionsPage />
+            </React.Suspense>
+          }
+        />
+
+        <Route
+          path="question/:id"
+          element={
+            <React.Suspense fallback={<Loading />}>
+              <QuestionPage />
             </React.Suspense>
           }
         />
