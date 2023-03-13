@@ -2,13 +2,13 @@ import { QuestionModel, QuestionModelInstance } from '@models/question_model';
 
 const defaultId = 1;
 
-export const questionFactory = (options: {
+export const questionFactory = (options?: {
   id?: number;
   question?: string;
 }): QuestionModelInstance =>
   QuestionModel.create({
-    id: options.id || defaultId,
-    question: options.question || 'Favourite programming language?',
+    id: options?.id || defaultId,
+    question: options?.question || 'Favourite programming language?',
     image_url:
       'https://dummyimage.com/600x400/000/fff.png&text=question+1+image+(600x400)',
     thumb_url:
