@@ -6,13 +6,11 @@ interface HealthStatus {
   status: string;
 }
 
-const fetchHealthStatus = async (): Promise<
-  AxiosResponse<HealthStatus>['data']
-> => {
+const execute = async (): Promise<AxiosResponse<HealthStatus>['data']> => {
   const { data } = await axiosInstance.get<HealthStatus>('/health');
 
   return data;
 };
 
 export const useQueryHealthStatus = (): UseQueryResult<HealthStatus, unknown> =>
-  useQuery<HealthStatus, unknown>('health', fetchHealthStatus);
+  useQuery<HealthStatus, unknown>('health', execute);

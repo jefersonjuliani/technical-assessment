@@ -32,6 +32,13 @@ export const Button = styled('button', {
           backgroundColor: '$blue11',
           borderColor: '$blue8',
         },
+
+        '&:disabled': {
+          backgroundColor: '$blue7',
+          borderColor: '$blue5',
+
+          color: '$gray11',
+        },
       },
       blue2: {
         backgroundColor: 'transparent',
