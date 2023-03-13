@@ -3,7 +3,7 @@ import { QuestionModelInstance } from '@models/question_model';
 import axiosInstance from '@services/api';
 import { useMutation, UseMutationResult } from 'react-query';
 
-const fetchQuestion = async (
+const execute = async (
   question: QuestionModelInstance,
 ): Promise<QuestionModelInstance> => {
   const { data } = await axiosInstance.put<QuestionModelInstance>(
@@ -22,7 +22,7 @@ export const useMutationQuestion = (): UseMutationResult<
   const rootStore = useRootStore();
 
   return useMutation<QuestionModelInstance, Error, QuestionModelInstance>(
-    async (question: QuestionModelInstance) => await fetchQuestion(question),
+    async (question: QuestionModelInstance) => await execute(question),
     {
       onSuccess: (data) => {
         rootStore.processNewQuestion(data);

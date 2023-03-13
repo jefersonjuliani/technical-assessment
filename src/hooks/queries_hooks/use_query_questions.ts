@@ -5,7 +5,7 @@ import { useQuery, UseQueryResult } from 'react-query';
 
 const initialOffset = 0;
 
-const fetchQuestions = async (
+const execute = async (
   limit: number,
   offset: number,
   filter: string,
@@ -33,7 +33,7 @@ export const useQueryQuestions = (
 
   return useQuery<QuestionModelInstance[], unknown>(
     ['questions', limit, offset, filter],
-    async () => await fetchQuestions(limit, offset, filter),
+    async () => await execute(limit, offset, filter),
     {
       onSuccess: (data) => {
         if (offset === initialOffset) {
