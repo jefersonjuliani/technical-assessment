@@ -6,8 +6,6 @@ export const Button = styled('button', {
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 8,
-  px: '$3dot5',
-  py: '$1dot5',
   lineHeight: '$base',
   fontFamily: '$muliBold',
 
@@ -20,6 +18,11 @@ export const Button = styled('button', {
   },
 
   variants: {
+    variant: {
+      outiline: {
+        border: '1px solid white',
+      },
+    },
     color: {
       blue: {
         backgroundColor: '$blue10',
@@ -30,19 +33,50 @@ export const Button = styled('button', {
           borderColor: '$blue8',
         },
       },
+      blue2: {
+        backgroundColor: 'transparent',
+        color: 'white',
+
+        '&:hover': {
+          backgroundColor: '$blue7',
+        },
+      },
+    },
+    width: {
+      full: {
+        width: '100%',
+      },
     },
     size: {
       sm: {
-        fontSize: '13px',
+        fontSize: '$sm',
         height: '25px',
         paddingRight: '10px',
         paddingLeft: '10px',
+
+        '@media screen and (max-width: 530px)': {
+          fontSize: '8px !important',
+        },
       },
-      lg: {
-        fontSize: '15px',
+      md: {
+        fontSize: '$md',
         height: '35px',
         paddingLeft: '15px',
         paddingRight: '15px',
+
+        '@media screen and (max-width: 530px)': {
+          fontSize: '12px !important',
+        },
+      },
+      lg: {
+        fontSize: '$lg',
+        height: '35px',
+        paddingLeft: '15px',
+        paddingRight: '15px',
+
+        '@media screen and (max-width: 530px)': {
+          fontSize: '12px !important',
+        },
       },
     },
   },
