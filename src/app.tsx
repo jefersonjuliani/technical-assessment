@@ -1,17 +1,19 @@
+import AppRouter from '@pages/routes';
+import { ProviderQuery } from '@providers/provider_query';
+import { ProviderStore } from '@providers/provider_store';
 import React from 'react';
+import { globalStyles } from './theme/global';
 
-import { styled } from '@stitches/react';
+const App = (): React.ReactElement => {
+  globalStyles();
 
-const Button = styled('button', {
-  backgroundColor: 'gainsboro',
-  borderRadius: '9999px',
-  fontSize: '13px',
-  padding: '10px 15px',
-  '&:hover': {
-    backgroundColor: 'red',
-  },
-});
-
-const App = (): React.ReactElement => <Button>Heloooo</Button>;
+  return (
+    <ProviderQuery>
+      <ProviderStore>
+        <AppRouter />
+      </ProviderStore>
+    </ProviderQuery>
+  );
+};
 
 export default App;

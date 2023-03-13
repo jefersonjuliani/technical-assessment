@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      html,
+      body,
+      #root {
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      ::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-button:end:increment,
+      ::-webkit-scrollbar-button:start:decrement {
+        background: #ffffff00;
+        display: none;
+      }
+
+      ::-webkit-scrollbar-track-piece {
+        background: hsla(218, 100%, 88%, 0.078);
+      }
+
+      ::-webkit-scrollbar-track-piece:vertical:start {
+        border-radius: 4px 4px 0 0;
+      }
+
+      ::-webkit-scrollbar-track-piece:vertical:end {
+        border-radius: 0 0 4px 4px;
+      }
+
+      ::-webkit-scrollbar-track-piece:horizontal:start {
+        border-radius: 4px 0 0 4px;
+      }
+
+      ::-webkit-scrollbar-track-piece:horizontal:end {
+        border-radius: 0 4px 4px 0;
+      }
+
+      ::-webkit-scrollbar-thumb:horizontal,
+      ::-webkit-scrollbar-thumb:vertical {
+        background: #a7c7ff21;
+        border-radius: 4px;
+        display: block;
+        height: 48px;
+      }
+
+      @supports (scrollbar-color: #89b4ff14 #091e4214) {
+        * {
+          scrollbar-color: #729eeb14 #091e4214;
+          scrollbar-width: thin;
+        }
+      }
+    </style>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon-bliss.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon-bliss.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Technical Assessment</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script
+      type="module"
+      src="/src/main.tsx"
+    ></script>
   </body>
 </html>
